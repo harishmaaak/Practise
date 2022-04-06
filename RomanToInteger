@@ -1,0 +1,36 @@
+package practise;
+
+import java.util.*;
+
+public class RomanToInteger {
+    public int romanToInteger(String romanNumber) {
+        Map<Character, Integer> numbers = new HashMap<>();
+        numbers.put('I', 1);
+        numbers.put('V', 5);
+        numbers.put('X', 10);
+        numbers.put('L', 50);
+        numbers.put('C', 100);
+        numbers.put('D', 500);
+        numbers.put('M', 1000);
+
+        int result = 0;
+        for (int i = 0; i < romanNumber.length(); i++) {
+            char ch = romanNumber.charAt(i);
+            if (i > 0 && numbers.get(ch) > numbers.get(romanNumber.charAt(i - 1))) {
+                result += numbers.get(ch) - 2 * numbers.get(romanNumber.charAt(i - 1));
+            } else {
+                result += numbers.get(ch);
+            }
+        }
+        return result;
+    }
+    
+    public static void main(String[] args) {
+        RomanToInteger roman = new RomanToInteger();
+        Scanner sc = new Scanner(System.in);
+        String romanNumber = sc.nextLine();
+        int result = roman.romanToInteger(romanNumber);
+        System.out.println(result);
+    }
+
+}
