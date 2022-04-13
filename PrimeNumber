@@ -1,0 +1,42 @@
+package practise;
+
+import java.util.Scanner;
+
+public class PrimeNumber {
+
+    public boolean isPrime(int n) {
+
+        for (int i = 2; i <= n / 2; i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public void findPrime(int a, int n) {
+        PrimeNumber number = new PrimeNumber();
+
+        for (int i = a; i <= n; i++) {
+            if((i == 0 || i == 1)) continue;
+                if (number.isPrime(i)) {
+                    System.out.print(i + " ");
+                
+            }           
+
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the first interval : ");
+        int a = sc.nextInt();
+        System.out.println("Enter the second interval : ");
+        int n = sc.nextInt();
+
+        PrimeNumber number = new PrimeNumber();
+        number.findPrime(a, n);
+        sc.close();
+    }
+
+}
