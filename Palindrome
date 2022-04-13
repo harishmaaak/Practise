@@ -1,0 +1,23 @@
+package practise;
+
+import java.util.Scanner;
+
+public class Palindrome {
+    public void checkPalindrome(String str){
+        String revString = "";
+     for(int i = str.length()-1; i>=0;i--){
+       revString = revString + str.charAt(i);
+     }
+     if(str.equals(revString)){
+         System.out.println("The given String is Palindrome ");
+     }else
+     System.out.println("The given String is not Palindrome ");
+    }
+    public static void main(String[] args){
+     Scanner sc = new Scanner(System.in);
+     String str = sc.nextLine();
+     Palindrome palindrome = new Palindrome();
+     palindrome.checkPalindrome(str);
+    }
+    
+}
