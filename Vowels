@@ -1,0 +1,35 @@
+package practise;
+
+import java.util.Scanner;
+
+public class Vowels {
+   
+    public void findVowels(String[] str){
+        int count = 0;
+
+      for(int i = 0 ; i < str.length ; i++){
+          for(int j = 0; j< str[i].length();j++){
+             char ch = str[i].toLowerCase().charAt(j);
+             if(ch == 'a'|| ch == 'e'||ch == 'i'||ch == 'o'|| ch == 'u'){
+                 count++;
+            }
+          }
+      }
+      System.out.println("Enter the number of vowels in the array : "+count);
+     
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of elements : ");
+        int n = sc.nextInt();
+        System.out.println("Enter the elements : ");
+        String[] str = new String[n];
+        for(int i = 0 ; i < n ; i++){
+            str[i] = sc.next();
+        }
+        Vowels vowels = new Vowels();
+        vowels.findVowels(str);
+        sc.close();
+    }
+    
+}
