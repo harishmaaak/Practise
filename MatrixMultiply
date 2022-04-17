@@ -1,0 +1,49 @@
+package practise;
+
+import java.util.Scanner;
+
+public class MultiplyMatrix {
+    public static void main(String[] args) {
+        int row1,col1,row2,col2;
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the number of row1 elements : ");
+        row1 = sc.nextInt();
+        System.out.print("Enter the number of column1 elements : ");
+        col1 = sc.nextInt();
+        System.out.print("Enter the number of row2 elements : ");
+        row2 = sc.nextInt();
+        System.out.print("Enter the number of column2 elements : ");
+        col2 = sc.nextInt();
+        if (col1 != row1) {
+            System.out.println("The given matrix cannot be multiplied : ");
+        }else {
+            int a[][] = new int[row1][col1];
+            int b[][] = new int[row2][col2];
+            int c[][] = new int[row1][col2];
+            System.out.println("Enter the value of matrix a : \n");
+            for (int i = 0; i < row1; i++) {
+                for (int j = 0; j < col1; j++) {
+                    a[i][j] = sc.nextInt();
+                }
+            }
+            System.out.println("Enter the value of matrix b : \n");
+            for (int i = 0; i < row2; i++) {
+                for (int j = 0; j < col2; j++) {
+                    b[i][j] = sc.nextInt();
+                }
+            }
+            System.out.println("Matrix Multiplication c : \n");
+            for (int i = 0; i < row1; i++) {
+                for (int j = 0; j < col2; j++) {
+                    c[i][j]=0;
+                    for (int k = 0; k < col1; k++) {
+                        c[i][j] = c[i][j] + (a[i][k] * b[k][j]);
+                    }
+                    System.out.print(c[i][j]+" ");
+                }
+                System.out.println();
+            }
+
+        }
+    }
+}
