@@ -1,0 +1,26 @@
+package practise;
+
+import java.util.Stack;
+
+public class InputCount {
+    public static void main(String[] args){
+        String in = "aaabbbbccad";
+        int count = 0;
+        Stack<Character> stack =  new Stack<>();
+        for(int i = in.length(); i>=0; i--){
+            char ch = in.charAt(i);
+            stack.push(ch);
+        }
+        char ch1 = '\0';
+        while(!stack.isEmpty()){
+            if(ch1 == '\0'){
+                ch1 = stack.pop();
+            }else{
+                
+            }
+
+          count++;
+        }
+        System.out.print(count);
+    }
+}
