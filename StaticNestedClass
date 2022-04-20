@@ -1,0 +1,19 @@
+package anonymous;
+
+public class StaticInnerClass {
+    static int x=10;
+    int y = 20;
+    private static int op = 30;
+    static class StaticNestedClass{
+        void display(){
+            System.out.println(x);
+            //System.out.println(y);non-static variables cannot be accessed
+            System.out.println(op);
+        }
+
+        public static void main(String[] args) {
+            StaticInnerClass.StaticNestedClass object = new StaticInnerClass.StaticNestedClass();
+            object.display();
+        }
+    }
+}
