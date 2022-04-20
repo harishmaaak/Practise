@@ -1,0 +1,27 @@
+package program;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+public class LocalDateExample {
+    public static void main(String[] args) {
+        LocalDate date = LocalDate.now();
+        LocalDate yesterday = date.minusDays(1);
+        LocalDate tomorrow = yesterday.plusDays(2);
+        boolean date1 = date.isLeapYear();
+        LocalDate date2 = LocalDate.of(2020,12,26);
+        String str = date.format(DateTimeFormatter.ISO_DATE);
+        String str1 = date.format(DateTimeFormatter.ISO_LOCAL_DATE);
+        String str2 = "2022-04-20";
+        LocalDate d = LocalDate.parse(str2);
+        System.out.println(d);
+        System.out.println("Today date"+date);
+        System.out.println("yesterday date"+yesterday);
+        System.out.println("tomorrow date"+tomorrow);
+        System.out.println(date1);
+        System.out.println(date2.isLeapYear());
+        System.out.println(date.atTime(1,30,10));
+        System.out.println(str);
+        System.out.println(str1);
+    }
+}
