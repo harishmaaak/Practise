@@ -1,0 +1,33 @@
+package anonymous;
+
+public class LocalInnerClass {
+    private void getValue(){
+        int sum = 20;
+        class LocalNestedClass{
+            private int divisor;
+            private int remainder;
+            public LocalNestedClass(){
+                divisor = 4;
+                remainder = sum%divisor;
+            }
+            private int getDivisor(){
+                 return divisor;
+            }
+            private int getRemainder(){
+                return remainder;
+            }
+            private int getQuotient(){
+                return sum/divisor;
+            }
+        }
+        LocalNestedClass nestedClass = new LocalNestedClass();
+        System.out.println(nestedClass.getDivisor());
+        System.out.println(nestedClass.getRemainder());
+        System.out.println(nestedClass.getQuotient());
+    }
+
+    public static void main(String[] args) {
+        LocalInnerClass localclass = new LocalInnerClass();
+        localclass.getValue();
+    }
+}
