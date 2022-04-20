@@ -1,0 +1,29 @@
+package program;
+
+import java.util.Scanner;
+
+public class Factorial {
+    int fac = 1;
+    public void findFactorial(int num){
+
+        if(num == 1){
+            System.out.println("The factorial of the number is : "+ fac);
+        }else{
+            fac *= num;
+            findFactorial(num-1);
+        }
+        //for (int i = 1; i <= num; i++) {
+
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        try{
+        System.out.println("Enter the number : ");
+        int num = sc.nextInt();
+        Factorial factorial = new Factorial();
+         factorial.findFactorial(num);
+        }catch(Exception e) {
+            System.out.println("InputMismatch Exception");
+        }
+    }
+}
