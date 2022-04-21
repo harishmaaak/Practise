@@ -1,0 +1,29 @@
+package program;
+
+import java.util.Scanner;
+
+public class ArmstrongNumber {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int ref = num;
+        int temp = num;
+        int value = 0;
+        int armstrong = 0;
+        int count = 0;
+        while(num!=0){
+            num = num/10;
+            count++;
+        }
+        while(temp!=0){
+          value = temp % 10;
+          armstrong = armstrong+(int) Math.pow(value,count);
+          temp= temp/10;
+        }
+        if(ref == armstrong){
+            System.out.println("This is armstrong number");
+        }else{
+            System.out.println("This is not armstrong number");
+        }
+    }
+}
