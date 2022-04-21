@@ -1,0 +1,39 @@
+package program;
+
+import java.util.*;
+
+public class RemoveDuplicates {
+    public static void main(String[] args) {
+        int[] arr1 = {2,4,5,8};
+        int[] arr2 = {4,7,6,3};
+        int size = arr1.length + arr2.length;
+        int[] array = new int[size];
+        for(int i = 0; i < arr1.length; i++){
+            array[i] = arr1[i];
+        }
+        for(int i = 0; i < arr2.length; i++){
+            array[arr1.length + i] = arr2[i];
+        }
+        System.out.println("merge array : ");
+        for(int i = 0; i < size; i++){
+            System.out.print(array[i]+" ");
+        }
+        System.out.println();
+        Arrays.sort(array);
+        //System.out.print(Arrays.toString(array));
+        List<Integer> list = new ArrayList<>(array.length);
+        for(int i : array){
+            list.add(i);
+        }
+        System.out.println("Sorted array elements : ");
+        System.out.println(list);
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        for(int i : list){
+            if(!arrayList.contains(i)){
+                arrayList.add(i);
+            }
+        }
+        System.out.println("After removing duplicate elements : ");
+        System.out.println(arrayList);
+    }
+}
