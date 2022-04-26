@@ -1,0 +1,11 @@
+package program;
+
+public class WordsString {
+    public static void main(String[] args) {
+        String str = "Hello";
+        String s2 = "Man";
+        System.out.println(str+s2);
+        System.out.println(s2+str);
+        System.out.println(str.substring(0,3)+s2+str.substring(3));
+    }
+}
